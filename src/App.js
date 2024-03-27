@@ -8,6 +8,7 @@ import Section_r from './components/Section_r';
 import Cards from './components/Cards';
 import Accordian from './components/Accordian';
 import Footer from './components/Footer';
+import Banner from './components/Banner';
 function App() {
   return (
     <div className="App">
@@ -15,15 +16,16 @@ function App() {
       <Navbar/>
         
       <Hero/>
+      <Banner/>
       <Section/>
       <Section_r/>
       <Section/>
-      <div className="flex flex-row justify-center mx-auto space-x-4">
+      <div className="flex flex-wrap justify-center mx-auto gap-4">
   <Cards />
   <Cards />
   <Cards />
- 
 </div>
+
 <div className="flex flex-col justify-center mx-16 space-x-4">
 <Accordian/>
 </div>

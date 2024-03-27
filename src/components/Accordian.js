@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Accordion,
@@ -13,17 +12,17 @@ const Accordian = () => {
    
     return (
       <>
-        <Accordion open={open === 1}>
-          <AccordionHeader onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader>
+        <Accordion open={open === 1} className="shadow-lg">
+          <AccordionHeader onClick={() => handleOpen(1)}>How do I invest in a Project?</AccordionHeader>
           <AccordionBody>
             We&apos;re not always in the position that we want to be at. We&apos;re constantly
             growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
             ourselves and actualize our dreams.
           </AccordionBody>
         </Accordion>
-        <Accordion open={open === 2}>
+        <Accordion open={open === 2} className="shadow-lg">
           <AccordionHeader onClick={() => handleOpen(2)}>
-            How to use Material Tailwind?
+          Can I get more details on the project than already on the site?
           </AccordionHeader>
           <AccordionBody>
             We&apos;re not always in the position that we want to be at. We&apos;re constantly
@@ -31,9 +30,9 @@ const Accordian = () => {
             ourselves and actualize our dreams.
           </AccordionBody>
         </Accordion>
-        <Accordion open={open === 3}>
+        <Accordion open={open === 3} className="shadow-lg">
           <AccordionHeader onClick={() => handleOpen(3)}>
-            What can I do with Material Tailwind?
+          When will I receive my Carbon Credits in my account?
           </AccordionHeader>
           <AccordionBody>
             We&apos;re not always in the position that we want to be at. We&apos;re constantly

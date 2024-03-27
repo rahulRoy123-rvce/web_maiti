@@ -1,31 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react';
+// import ss1 from '../images/ss1.png'
 
 const Navbar = () => {
-  return (
-    <div className="bg-[#133009]">
-     <header class="text-white body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-      {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg> */}
-      <span class="ml-3 text-xl">DeCarbonn</span>
-    </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-white">Home</a>
-      <a class="mr-5 hover:text-white">Project</a>
-      <a class="mr-5 hover:text-white">About</a>
-      {/* <a class="mr-5 hover:text-white">Fourth Link</a> */}
-    </nav>
-    <button class="inline-flex items-center text-black bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</header>
-    </div>
-  )
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-export default Navbar
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="bg-[#133009] sticky top-0 z-50">
+      <header className="text-white body-font">
+        <div className="container mx-auto flex p-5 items-center justify-between">
+          <a className="flex title-font font-medium items-center text-white">
+            <span className="text-xl">DeCarbonn</span>
+          </a>
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-white focus:outline-none">
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          <nav className={`md:flex md:items-center md:justify-center ${isOpen ? 'block' : 'hidden'}`}>
+            <a className="block mr-5 hover:text-white">Home</a>
+            <a className="block mr-5 hover:text-white">Project</a>
+            <a className="block mr-5 hover:text-white">About</a>
+            <button className="bg-white mr-5 text-black p-4 rounded-lg">Connect</button>
+          </nav>
+        </div>
+      </header>
+    </div>
+  );
+};
+
+export default Navbar;
